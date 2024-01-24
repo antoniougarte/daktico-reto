@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 52.37 52.37">
+  <defs>
+    <linearGradient id="linear-gradient" x1=".72" y1="26.18" x2="53.09" y2="26.18" gradientUnits="userSpaceOnUse">
+      <stop offset=".35" stop-color="#f7aa3e"/>
+      <stop offset="1" stop-color="#e5841a"/>
+    </linearGradient>
+    <radialGradient id="radial-gradient" cx="24.5" cy="1465.59" fx="24.5" fy="1465.59" r="39.2" gradientTransform="translate(0 1488.72) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#185e93"/>
+      <stop offset=".1" stop-color="#124375"/>
+      <stop offset=".23" stop-color="#0d2c5b"/>
+      <stop offset=".36" stop-color="#091a47"/>
+      <stop offset=".51" stop-color="#060d38"/>
+      <stop offset=".7" stop-color="#040630"/>
+      <stop offset="1" stop-color="#04042e"/>
+    </radialGradient>
+  </defs>
+  <g id="si-abajo">
+    <path d="m0,52.37V18.91C0,8.47,8.47,0,18.91,0h33.46L0,52.37Z" style="fill: url(#linear-gradient); stroke-width: 0px;"/>
+  </g>
+  <g id="si-arriba">
+    <path d="m18.91,5.57c-7.36,0-13.34,5.99-13.34,13.34v20.02L38.93,5.57h-20.01Z" style="fill: url(#radial-gradient); stroke-width: 0px;"/>
+  </g>
+</svg>

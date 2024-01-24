@@ -1,0 +1,273 @@
+/* ----------------------------------------------- HEADER / SCORE -------------------*/
+.portada .header, .lobby .header {
+    width: 100vw;
+    padding: 10px 0px;
+    display: grid;
+    grid-area: lobby-header;
+    /*grid-template-areas: "portada-usuario portada-estadisticas portada-menu";
+    grid-template-columns: minmax(320px, 380px) auto max(120px);*/
+    grid-template-areas: 
+        "header-usuario header-menu"
+        "header-estadisticas header-estadisticas";
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+}
+
+.header .usuario {
+    display: grid;
+    grid-area: header-usuario;
+    position: relative;
+    height: var(--medida-xl);    
+    align-items: center;
+}
+
+
+.header .usuario .fondousuario {
+    position: absolute;
+    z-index: 1;
+    width: 95%;
+    height: var(--medida-s);
+    max-width: calc(var(--medida-xxl) * 4);
+    border-top-right-radius: 10px 10px;
+    border-bottom-right-radius: 10px 200px;
+    background-color: var(--dark-color);
+    opacity: 60%;
+}
+
+.header .usuario .fondousuario::before {
+    content: "";
+    display: block;
+    height: 0.15rem;
+    position: absolute;
+    z-index: 2;
+    top: 0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 1rem);
+    background: var(--primary-color);
+    border-radius: 100%;
+    opacity: 0.7;
+    background-image: linear-gradient(-270deg, var(--primary-color-light) 20%, var(--primary-color) 60%, var(--primary-color-dark) 80%);
+  }
+  
+.header .usuario .fondousuario::after {
+    content: "";
+    display: block;
+    height: 0.15rem;
+    position: absolute;
+    z-index: 3;
+    bottom: 0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 1rem);
+    background: var(--primary-color);
+    border-radius: 100%;
+    opacity: 0.7;
+    background-image: linear-gradient(-270deg, var(--primary-color-light) 20%, var(--primary-color) 60%, var(--primary-color-dark) 80%);
+}
+
+.header .usuario .nombreyapellido  {
+    width: 100%;
+    left: calc(var(--medida-m) * 2);
+    position: absolute;
+    z-index: 4;
+    font-family: "Regular"; 
+    font-size: var(--font-l);
+    max-width: 16ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+/* ----------------------------------------------- HEADER / navbar -------------------*/
+.header .navbar {
+    grid-area: header-menu;
+    margin: 0px var(--espaciado-l);
+    display: inline-flex;
+    justify-content: end;
+    
+}
+
+
+.header .navbar .nav-item {
+    position: relative;
+    padding: 0px var(--espaciado-xs);
+}
+
+.header .navbar .nav-item .btn-nav-nombre {
+    font-family: "Bold";
+    font-size: var(--font-xxs);
+    margin-bottom: 2px;
+    filter: var(--sombra-hard);
+}
+
+.header .navbar .nav-item .btn-nav-icono {
+    width: var(--medida-s);
+    height: var(--medida-s);
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color:var(--dark-color);
+    border: var(--borde-m) solid var(--dark-color);
+}
+
+.header .navbar .nav-item .btn-nav-icono::before {
+    content: "";
+    display: block;
+    height: 0.5rem;
+    position: absolute;
+    top: 0.05rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 1.8rem);
+    border-radius: 100%;
+    opacity: 0.9;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,1) 100%);
+  }
+
+
+/* ----------------------------------------------- HEADER / estadísticas -------------------*/
+.header .estadisticas {
+    display: grid;
+    grid-area: header-estadisticas;
+    grid-template-columns: repeat(auto-fill,minmax(calc(var(--medida-xl)*2), 1fr));
+    margin: var(--espaciado-l) var(--espaciado-m);
+}
+
+.header .estadisticas .estadistica {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0px 10px 0px 10px;
+    min-height:var(--medida-xl);
+}
+
+.header .estadisticas .estadistica .btn-estadistica-fondo {
+    position: absolute;
+    z-index: 1;
+    width: calc(100% - 20px);
+    height: var(--medida-s);
+    margin-left: 20px;
+    padding-left: 25px;
+    border-top-right-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+    background-color: var(--dark-color);
+    opacity: 40%;
+    /*background-image: url("https://daktico.s3.amazonaws.com/skins/futurista/img/base-estadisticas.png");*/
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: left
+}
+
+.header .estadisticas .estadistica .btn-estadistica-fondo::before {
+    content: "";
+    display: block;
+    height: 0.1rem;
+    position: absolute;
+    z-index: 2;
+    top: 0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 1rem);
+    background: var(--primary-color);
+    border-radius: 100%;
+    opacity: 0.9;
+    background-image: linear-gradient(-270deg, var(--primary-color-light) 20%, var(--primary-color) 60%, var(--primary-color-dark) 80%);
+  }
+  
+.header .estadisticas .estadistica .btn-estadistica-fondo::after {
+    content: "";
+    display: block;
+    height: 0.1rem;
+    position: absolute;
+    z-index: 3;
+    bottom: 0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 1rem);
+    background: var(--primary-color);
+    border-radius: 100%;
+    opacity: 0.9;
+    background-image: linear-gradient(-270deg, var(--primary-color-light) 20%, var(--primary-color) 60%, var(--primary-color-dark) 80%);
+}
+
+.header .estadisticas .estadistica .btn-estadistica-nombre {
+    position: absolute;
+    z-index: 4;
+    top: 0px;
+    left: var(--medida-m);
+    font-family: "Bold";
+    font-size: var(--font-xxs);
+    margin-bottom: 5px;
+    filter: var(--sombra-hard);
+}
+
+.header .estadisticas .estadistica .btn-estadistica-valor {
+    position: absolute;
+    z-index: 5;
+    left: var(--medida-l);
+    font-family: "Regular";
+    font-size: var(--font-l);
+    filter: var(--sombra-hard);
+}
+
+.header .estadisticas .estadistica .btn-estadistica-imagen {
+    position: relative;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+}
+
+.header .estadisticas .estadistica .btn-estadistica-imagen .shine {
+    position: absolute;
+    width: var(--medida-s);
+    height: var(--medida-s);
+    top: -5px;
+    left:calc(var(--medida-s) / 2);
+    opacity: 0.8;
+    background-image: var(--shine-large);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.header .estadisticas .estadistica .btn-estadistica-imagen .punto-img {
+    width: var(--medida-m);
+    height: var(--medida-m);
+    background-image: var(--punto);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header .estadisticas .estadistica .btn-estadistica-imagen .insignia-img {
+    width: var(--medida-m);
+    height: var(--medida-m);
+    background-image: var(--insignia);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header .estadisticas .estadistica .btn-estadistica-imagen .trofeo-img {
+    width: var(--medida-m);
+    height: var(--medida-m);
+    background-image: var(--trofeo);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header .estadisticas .estadistica .btn-estadistica-imagen .galardon-img {
+    width: var(--medida-m);
+    height: var(--medida-m);
+    background-image: var(--galardon);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}

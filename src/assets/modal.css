@@ -1,0 +1,435 @@
+.modal {
+    width: 90%;
+    min-width: 320px;
+    margin: auto;
+    border: 0px solid transparent;
+    background-color: transparent;
+}
+
+.modal::backdrop {
+    background:linear-gradient(35deg, rgba(0, 0, 0),rgba(0, 0, 0));
+    opacity: 0.75;
+}
+
+.modal .modal-container {
+    margin: var(--espaciado-xl);
+    position: relative;
+    padding: var(--espaciado-m) var(--espaciado-m);
+    border-radius: 20px;
+    border: var(--borde-xl) solid var(--primary-color);
+    background-color: #ffffff;
+    filter: var(--sombra-intense);
+}
+
+.modal .modal-container .modal-close {
+    position: absolute;
+    z-index: 1;
+    margin: 0px;
+    top: calc(0px - var(--espaciado-l));
+    right: calc(0px - var(--espaciado-l));
+}
+
+.modal .modal-container .modal-titulo {
+    padding-top: var(--espaciado-m);
+    padding-bottom: var(--espaciado-m);
+    color:var(--primary-color);
+    font-family: "Ultra";
+    font-size: var(--font-xxl);
+    letter-spacing: 2px;
+    text-align: center;
+    filter:var(--sombra-hard);
+
+}
+    
+.modal .modal-container .modal-bajada {
+    color:var(--secundary-color);
+    font-family: "Light";
+    font-size: var(--font-m);
+    text-align: center;
+    filter:var(--sombra-subtle);
+
+}
+
+/* ------------------------------------------ MODAL PROGRESO */
+
+.modal .resumen-progreso {
+    width: 100%;
+    margin: var(--espaciado-l) 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(var(--medida-xxl), 1fr));
+    grid-template-rows: auto;
+    place-items: center;
+}
+
+.modal .resumen-progreso .resumen-item {
+    display: grid;
+    grid-template-columns: var(--medida-s) auto;
+    place-items: center;
+}
+
+.modal .resumen-progreso .resumen-item .grafico {
+    width: var(--medida-s);
+    height: var(--medida-s);
+}
+
+.modal .resumen-progreso .resumen-item .grafico .vida-img {
+    width: 100%;
+    height: 100%;
+    background-image: var(--vida);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.modal .resumen-progreso .resumen-item .grafico .intento-img {
+    width: 100%;
+    height: 100%;
+    background-image: var(--intento);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.modal .resumen-progreso .resumen-item .grafico .punto-img {
+    width: 100%;
+    height: 100%;
+    background-image: var(--punto);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.modal .resumen-progreso .resumen-item .detalles {
+    margin-left: calc(var(--espaciado-s) / 2);
+}
+
+.modal .resumen-progreso .resumen-item .detalles .valor {
+    color:var(--secundary-color);
+    font-family: "Light";
+    font-size: var(--font-m);
+    text-align: center;
+    filter:var(--sombra-subtle);
+}
+
+.modal .resumen-progreso .resumen-item .detalles .concepto {
+    color:var(--secundary-color);
+    font-family: "Light";
+    font-size: var(--font-xxs);
+    text-align: center;
+    filter:var(--sombra-subtle);
+}
+
+
+.modal .contenido-de-curso {
+    max-height: calc(0.6 * 100vh);
+    overflow-y: scroll;
+}
+
+.modal .contenido-de-curso .modulo {
+    margin: 0px var(--espaciado-xs) var(--espaciado-m) var(--espaciado-m);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: var(--medida-s);
+    place-items: center;
+    border-radius: var(--espaciado-m) var(--espaciado-m) 0px 0px;
+    background-color: var(--primary-color-dark);
+}
+
+.modal .contenido-de-curso .modulo .nombre {
+    width: 100%;
+    padding: 0px var(--espaciado-m);
+    color:var(--light-color);
+    font-family: "Light";
+    font-size: var(--font-l);
+    text-align: left;
+    filter:var(--sombra-hard);
+}
+
+.modal .contenido-de-curso .actividad {
+    margin: 0px var(--espaciado-m) var(--espaciado-m) var(--espaciado-m);
+    display: grid;
+    grid-template-columns: var(--medida-m) minmax(var(--medida-xl),auto) var(--medida-l);
+    grid-template-rows: minmax(var(--medida-m),1fr);
+    place-items: center;
+    background-color: var(--primary-color-subtle);
+}
+
+
+.modal .contenido-de-curso .actividad .estado {
+    width: var(--medida-xxs);
+    height: var(--medida-xxs);
+}
+
+.modal .contenido-de-curso .actividad .estado .check {
+    width: 100%;
+    height: 100%;
+    background-image: var(--check);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.modal .contenido-de-curso .actividad .estado .candado-abierto {
+    width: 100%;
+    height: 100%;
+    background-image: var(--candado-abierto);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.modal .contenido-de-curso .actividad .estado .candado-cerrado {
+    width: 100%;
+    height: 100%;
+    background-image: var(--candado-cerrado);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.modal .contenido-de-curso .actividad .nombre {
+    width: 100%;
+    color:var(--secundary-color);
+    font-family: "Light";
+    font-size: var(--font-m);
+    text-align: left;
+    filter:var(--sombra-subtle);
+}
+.modal .contenido-de-curso .actividad .nombre span {
+    color:var(--secundary-color-soft);
+    font-family: "Light";
+    font-size: var(--font-xxs);
+    text-align: left;
+}
+
+.modal .contenido-de-curso .actividad .puntos {
+    color:var(--secundary-color);
+    font-family: "Light";
+    font-size: var(--font-m);
+    text-align: left;
+    filter:var(--sombra-subtle);
+}
+
+.modal .contenido-de-curso .actividad .puntos span {
+    color:var(--secundary-color-soft);
+    font-family: "Light";
+    font-size: var(--font-xxs);
+    text-align: left;
+}
+
+.modal .contenido-de-curso .actividad-actual {
+    border-left: var(--borde-l) solid var(--primary-color);
+    border-right: var(--borde-l) solid var(--primary-color);
+}
+
+.modal .contenido-de-curso .actividad:hover,focus {
+    background-color: var(--primary-color-soft);
+}
+
+
+
+/* ------------------------------------------ MODAL RECURSOS */
+
+.modal .lista-archivos-descarga {
+    max-height: calc(0.6 * 100vh);
+    margin-top: var(--espaciado-l);
+    overflow-y: scroll; 
+}
+
+.modal .lista-archivos-descarga .archivo-descarga {
+    margin: 0px var(--espaciado-s) var(--espaciado-m) var(--espaciado-m);
+    display: grid;
+    grid-template-columns: minmax(var(--medida-xl),auto) var(--medida-l);
+    grid-template-rows: minmax(var(--medida-m),100%);
+    place-items: center;
+    border-radius: 8px;
+    background-color: var(--primary-color-dark);
+}
+
+.modal .lista-archivos-descarga .archivo-descarga .nombre {
+    width: 100%;
+    padding-left: var(--espaciado-m);
+    color:var(--light-color);
+    font-family: "Regular";
+    font-size: var(--font-l);
+    text-align: left;
+    filter:var(--sombra-medium);
+}
+
+.modal .lista-archivos-descarga .archivo-descarga .nombre span {
+    padding-left: var(--espaciado-l);
+    color:var(--light-color-soft);
+    font-family: "Light";
+    font-size: var(--font-xs);
+    text-align: left;
+    filter:var(--sombra-none);
+}
+
+.modal .lista-archivos-descarga .archivo-descarga .icono {
+    width: 100%;
+    padding-right: var(--espaciado-m);
+    color:var(--light-color);
+    font-size: var(--font-m);
+    text-align: right;
+    filter:var(--sombra-subtle);
+}
+
+
+
+/* ------------------------------------------ MODAL PUNTOS */
+
+
+
+/* ------------------------------------------ MODAL INSIGNIAS */
+
+
+
+/* ------------------------------------------ MODAL RANKING */
+.modal .ranking-curso {
+    max-height: calc(0.6 * 100vh);
+    margin: var(--espaciado-xl) 0px;
+    display: grid;
+    grid-auto-rows: min-content;
+    overflow-y: scroll;
+}
+
+.modal .ranking-curso .participante {
+    position: relative;
+    z-index: 1;
+    width: 99%;
+    height: var(--medida-l);
+    margin: var(--espaciado-xxs);
+    display: grid;
+    grid-template-columns: minmax(var(--medida-xxs), var(--medida-xl)) minmax(calc(var(--medida-s) * 2), auto) minmax(var(--medida-xxs), calc(var(--medida-l) * 2)) minmax(var(--medida-xs), calc(var(--medida-l) * 2)) minmax(calc(var(--medida-s) * 2), 180px);
+    grid-template-rows: auto;
+    place-items: center;
+    border: var(--borde-xs) solid var(--primary-color);
+    border-radius: 45px;
+    /*background-image: linear-gradient(270deg, var(--primary-color-light) 20%, var(--primary-color) 60%, var(--primary-color-dark) 80%);*/
+    background-image: linear-gradient(
+        0deg, 
+        var(--primary-color-dark) 0%,
+        var(--primary-color) 15%,
+        var(--primary-color-light) 40%,
+        var(--primary-color-light) 60%,
+        var(--primary-color) 85%,
+        var(--primary-color-dark) 100%
+        );
+}
+
+
+.modal .ranking-curso .participante::before {
+    content: "";
+    display: block;
+    height: 0.1rem;
+    position: absolute;
+    z-index: 2;
+    top: 0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 1rem);
+    border-radius: 100%;
+    opacity: 0.7;
+    background-image: linear-gradient(-270deg, var(--shine-color-0) 0%, var(--shine-color-60) 60%, var(--shine-color-0) 100%);
+}
+  
+.modal .ranking-curso .participante::after {
+    content: "";
+    display: block;
+    height: 0.1rem;
+    position: absolute;
+    z-index: 3;
+    bottom: 0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 1rem);
+    border-radius: 100%;
+    opacity: 0.7;
+    background-image: linear-gradient(-270deg, var(--shine-color-0) 0%, var(--shine-color-60) 60%, var(--shine-color-0) 100%);
+}
+
+
+.modal .ranking-curso .mipuesto {
+    border: 3px solid var(--secundary-color);
+    background-image: linear-gradient(
+        0deg, 
+        var(--secundary-color-dark) 0%,
+        var(--secundary-color) 15%,
+        var(--secundary-color-light) 40%,
+        var(--secundary-color-light) 60%,
+        var(--secundary-color) 85%,
+        var(--secundary-color-dark) 100%
+        );
+}
+
+.modal .ranking-curso .participante .puesto {
+    padding: var(--espaciado-s) var(--espaciado-m);
+    border-radius: 20px;
+    font-family: "Ultra";
+    font-size: var(--font-m);
+    color:var(--light-color);
+    text-shadow:
+        2px 0px 1px rgba(0, 0, 0, 0.35),
+        0px 2px 1px rgba(0, 0, 0, 0.35),
+        -2px 0px 1px rgba(0, 0, 0, 0.35),
+        0px -2px 1px rgba(0, 0, 0, 0.35);
+}
+
+
+.modal .ranking-curso .participante .nombre {
+    width: 100%;
+    font-family: "Ultra";
+    font-size: var(--font-m);
+    color:var(--light-color);
+    text-align: left;
+    letter-spacing: 2px;
+    filter: var(--sombra-hard);
+
+}
+
+.modal .ranking-curso .participante .puntaje {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    place-items: center;
+}
+
+.modal .ranking-curso .participante .puntaje .puntos {
+    width: 100%;
+    font-family: "Ultra";
+    font-size: var(--font-m);
+    color:var(--light-color);
+    letter-spacing: 2px;
+    filter: var(--sombra-hard);
+
+}
+
+.modal .ranking-curso .participante .puntaje .punto-img {
+    width: var(--medida-xxs);
+    height: var(--medida-xxs);
+    margin-left:var(--espaciado-xs);
+    background-image: var(--punto);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.modal .ranking-curso .participante .intentos {
+    font-family: "Bold";
+    font-size: var(--font-m);
+    color:var(--light-color);
+    filter: var(--sombra-hard);
+
+}
+
+.modal .ranking-curso .participante .fecha {
+    font-family: "Bold";
+    font-size: var(--font-m);
+    color:var(--light-color);
+    filter: var(--sombra-hard);
+
+}
+
+
+
+/* ------------------------------------------ MODAL GALARDONES */

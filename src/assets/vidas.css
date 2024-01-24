@@ -1,0 +1,52 @@
+.vidas {
+    width: 70%;
+    height: auto;
+    margin: var(--espaciado-m) 0px;
+    display: grid;
+    place-items: center;
+}
+
+.vidas .vidas-container {
+    width: 100%;
+    min-width: 160px;
+    max-width: calc(var(--medida-xl) * 8);
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(var(--medida-m), 1fr));
+    place-items: center;
+}
+
+.vidas .vidas-texto {
+    margin-top: var(--espaciado-xl);
+    text-align: center;
+    font-family: "Light";
+    font-size: var(--font-l);
+    filter: var(--sombra-medium);
+}
+
+.vidas .vidas-alerta{
+    margin-top: var(--espaciado-s);
+    text-align: center;
+    font-family: "Light";
+    font-size: var(--font-xs);
+    filter: var(--sombra-subtle);
+}
+
+
+.vidas .vida-on {
+    width: var(--medida-m);
+    height: var(--medida-m);
+    background-image: var(--vida-on);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.vidas .vida-off {
+    width: var(--medida-m);
+    height: var(--medida-m);
+    background-image: var(--vida-off);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+

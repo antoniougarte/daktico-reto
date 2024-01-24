@@ -1,0 +1,94 @@
+/* ----------------------------------------------- TEMPLATE -------------------*/
+.evaluacion-intro {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    background: var(--background-actividades) no-repeat center center fixed ;
+    background-size:cover;
+}
+
+.evaluacion-intro .lienzo {
+    display: grid;
+    grid-template-areas:
+        "evaluacion-intro-header"
+        "evaluacion-intro-main"
+        "evaluacion-intro-footer";
+    grid-template-rows: min-content auto min-content;
+    grid-template-columns: auto;
+}
+
+
+.evaluacion-intro .header {
+    position: relative;
+    z-index: 2;
+    grid-area: evaluacion-intro-header;
+    display: grid;
+    place-items: center;
+}
+
+.evaluacion-intro .main {
+    position: relative;
+    z-index: 1;
+    grid-area: evaluacion-intro-main;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    place-items: center;
+}
+
+
+.evaluacion-intro .footer {
+    position: relative;
+    z-index: 3;
+    grid-area: evaluacion-intro-footer;
+    display: grid;
+    place-items: center;
+}
+
+.evaluacion-intro .footer .container {
+    display: grid;
+    place-items: center;
+    margin: var(--espaciado-m) var(--espaciado-m) var(--espaciado-l) var(--espaciado-m);
+}
+
+
+/* ----------------------------------------------- HEADER -------------------*/
+
+/* ----------------------------------------------- MAIN / progreso-centro -------------------*/
+.evaluacion-intro .main .centro {
+    width: 85%;
+    max-width: 1400px;
+    height: 100%;
+    margin: var(--espaciado-m);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    place-items: center;
+}
+
+.evaluacion-intro .main .centro .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    place-items: center;
+}
+
+.evaluacion-intro .main .centro .container .box .box-wrap {
+    place-items: center;
+}
+
+.evaluacion-intro .titulo {
+    margin: var(--espaciado-xl) var(--espaciado-xxl) var(--espaciado-xl) var(--espaciado-xl);
+    text-align: center;
+    font-family: "Regular";
+    font-size: var(--font-xxl);
+    filter: var(--sombra-hard);
+}
+
+.evaluacion-intro .vidas {
+    margin: var(--espaciado-xl);
+}

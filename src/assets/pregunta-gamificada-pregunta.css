@@ -1,0 +1,95 @@
+/* ----------------------------------------------- TEMPLATE -------------------*/
+.pregunta-gamificada-pregunta {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    background: var(--background-actividades) no-repeat center center fixed ;
+    background-size:cover;
+}
+
+.pregunta-gamificada-pregunta .lienzo {
+    display: grid;
+    grid-template-areas:
+        "pregunta-gamificada-pregunta-header"
+        "pregunta-gamificada-pregunta-main"
+        "pregunta-gamificada-pregunta-footer";
+    grid-template-rows: min-content auto min-content;
+    grid-template-columns: auto;
+}
+
+
+.pregunta-gamificada-pregunta .header {
+    position: relative;
+    z-index: 2;
+    grid-area: pregunta-gamificada-pregunta-header;
+    display: grid;
+    place-items: center;
+}
+
+.pregunta-gamificada-pregunta .main {
+    position: relative;
+    z-index: 1;
+    grid-area: pregunta-gamificada-pregunta-main;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    place-items: center;
+}
+
+.pregunta-gamificada-pregunta .footer {
+    position: relative;
+    z-index: 3;
+    grid-area: pregunta-gamificada-pregunta-footer;
+    display: grid;
+    place-items: center;
+}
+
+.pregunta-gamificada-pregunta .footer .container {
+    display: grid;
+    place-items: center;
+    margin: var(--espaciado-m) var(--espaciado-m) var(--espaciado-l) var(--espaciado-m);
+}  
+
+
+
+/* ----------------------------------------------- MAIN / progreso-centro -------------------*/
+.pregunta-gamificada-pregunta .main .centro {
+    max-width: 1400px;
+    margin: var(--espaciado-m);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.pregunta-gamificada-pregunta .main .centro .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    
+}
+
+.pregunta-gamificada-pregunta .main .centro .box .box-container .box-wrap {
+    background-color: transparent;
+    background-image: none;
+}
+
+.pregunta-gamificada-pregunta .pregunta {
+    padding: var(--espaciado-xl);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    place-items: center;
+    font-family: "Regular";
+    font-size: var(--font-xxl);
+    text-align: center;
+    filter: var(--sombra-medium);
+}

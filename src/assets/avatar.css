@@ -1,0 +1,77 @@
+.miniavatar {
+    width: var(--medida-l);
+    height: var(--medida-l);
+    position: absolute;
+    z-index: 5;
+    margin-left: var(--espaciado-l);
+    display: grid;
+    place-items: center;
+}
+
+
+.miniavatar .marcoexterior {
+    position: absolute;
+    z-index: 1;
+    width: 115%;
+    height: 115%;
+    border-radius: 50%;
+    background: linear-gradient(0deg, var(--secundary-color-dark) 0%, var(--secundary-color-light) 30%, var(--secundary-color-light) 70%, var(--secundary-color-dark) 100%);
+
+}
+
+.miniavatar .marcointerior {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(95deg, var(--secundary-color-dark) 0%, var(--secundary-color-light) 30%, var(--secundary-color-light) 70%, var(--secundary-color-dark) 100%);
+}
+
+.miniavatar .fondomarco {
+    position: absolute;
+    z-index: 3;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    width: 85%;
+    height: 85%;
+}
+
+.miniavatar .sombrafondomarco {
+    position: absolute;
+    z-index: 4;
+    width: 85%;
+    height: 85%;
+    background-image: var(--sombra-interior);
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.miniavatar .miniavatar-img {
+    position: absolute;
+    z-index: 5;
+    width: 85%;
+    height: 85%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.miniavatar .shine {
+    position: absolute;
+    z-index: 6;
+    width: 100%;
+    height: 100%;
+    left: -2%;
+    top: -2%;
+    background-image: var(--shine-small);
+    background-repeat: no-repeat;
+}
+
+.miniavatar .miniavatar-1{
+    background-image: var(--miniavatar-1);
+}
+
+.miniavatar .miniavatar-2{
+    background-image: var(--miniavatar-2);
+}

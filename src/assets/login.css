@@ -1,0 +1,124 @@
+/* ----------------------------------------------- TEMPLATE -------------------*/
+.login {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    background: var(--background-actividades) no-repeat center center fixed ;
+    background-size:cover;
+}
+
+.login .lienzo {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+.login .main {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    place-items: center;
+}
+
+
+/* ------------------------------------------ VISTAS RESPONSIVE */
+@media (max-width:800px) and (max-height:560px) { /* >>>>> embebidos */
+    .login .login-wrap .logo-cliente {
+        width: 180px!important;
+    }
+}
+
+@media (max-width:680px) { /* >>>>> moviles */
+    .login .login-wrap .logo-cliente {
+        width: 180px!important;
+    }
+}
+
+@media (max-height:400px) { /* >>>>> enanos */
+
+}
+
+@media (min-width:980px) { /* >>>>> mejora la vista en resoluciones ideales */
+
+}
+
+@media (min-width:1300px) { /* >>>>> mejora la vista en resoluciones extragrandes */
+    
+}
+
+
+
+/* ----------------------------------------------- MAIN / progreso-centro -------------------*/
+.login .main .centro {
+    width: 100%;
+    max-width: 700px;
+    height: 100%;
+    margin: var(--espaciado-xl);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    place-items: center;
+}
+
+.login .main .centro .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    place-items: center;
+}
+
+.login .login-wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    place-items: center;
+    padding: var(--espaciado-l);
+    border-radius: 10px;
+}
+
+.login .login-wrap .logo-cliente {
+    width: 290px;
+    height: auto;
+    padding: 6px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.login .login-wrap .logo-cliente img {
+    width: 100%;
+    height: auto;
+}
+
+
+.login .login-wrap .parrafo {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    margin: var(--espaciado-xxl) var(--espaciado-s)  var(--espaciado-m)  var(--espaciado-s);
+    text-align: center;
+    font-family: "Regular";
+    font-size: var(--font-m);
+}
+
+.login .login-wrap .formulario {
+    display: grid;
+    place-items: center;
+}
+
+.login .login-wrap .formulario .btn {
+    margin-top: var(--espaciado-l); 
+}
+
+
+.login .login-wrap .formulario .lnk {
+    margin-top: var(--espaciado-s);
+    font-family: "Light";
+    font-size: var(--font-xs);
+}

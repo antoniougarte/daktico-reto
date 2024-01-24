@@ -1,0 +1,107 @@
+/* ----------------------------------------------- TEMPLATE -------------------*/
+.evaluacion-confirmacion {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    background: var(--background-actividades) no-repeat center center fixed ;
+    background-size:cover;
+}
+
+.evaluacion-confirmacion .lienzo {
+    display: grid;
+    grid-template-areas:
+        "evaluacion-confirmacion-header"
+        "evaluacion-confirmacion-main"
+        "evaluacion-confirmacion-footer";
+    grid-template-rows: min-content auto min-content;
+    grid-template-columns: auto;
+}
+
+
+.evaluacion-confirmacion .header {
+    position: relative;
+    z-index: 2;
+    grid-area: evaluacion-confirmacion-header;
+    display: grid;
+    place-items: center;
+}
+
+.evaluacion-confirmacion .main {
+    position: relative;
+    z-index: 1;
+    grid-area: evaluacion-confirmacion-main;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    place-items: center;
+}
+
+
+.evaluacion-confirmacion .footer {
+    position: relative;
+    z-index: 3;
+    grid-area: evaluacion-confirmacion-footer;
+    display: grid;
+    place-items: center;
+}
+
+.evaluacion-confirmacion .footer .container {
+    display: grid;
+    place-items: center;
+    margin: var(--espaciado-m) var(--espaciado-m) var(--espaciado-l) var(--espaciado-m);
+}  
+
+
+/* ----------------------------------------------- HEADER -------------------*/
+
+/* ----------------------------------------------- MAIN / progreso-centro -------------------*/
+.evaluacion-confirmacion .main .centro {
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    margin: var(--espaciado-m);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    place-items: center;
+}
+
+.evaluacion-confirmacion .main .centro .container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    place-items: center;
+}
+
+.evaluacion-confirmacion .main .centro .container .box .box-wrap {
+    place-items: center;
+}
+
+.evaluacion-confirmacion .titulo {
+    margin: var(--espaciado-l);
+    text-align: center;
+    font-family: "Regular";
+    font-size:var(--font-xxxl);
+    white-space:unset;
+    line-height: calc(var(--font-xxxl) * 1.25);
+    filter: var(--sombra-hard);
+
+}
+
+.evaluacion-confirmacion span {
+    margin: var(--espaciado-l) 0px;
+    margin-bottom: var(--espaciado-xl);
+    font-size: var(--font-l);
+    line-height: calc(var(--font-l) * 1.25);
+    color: var(--subtle-color);
+    filter: var(--sombra-soft);
+
+}
+
+.evaluacion-confirmacion .vidas {
+    max-width: 70%;
+    margin-bottom: var(--espaciado-xl);
+}

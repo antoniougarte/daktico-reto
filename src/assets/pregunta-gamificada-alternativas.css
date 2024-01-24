@@ -1,0 +1,254 @@
+/* ----------------------------------------------- TEMPLATE -------------------*/
+.pregunta-gamificada-alternativas {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    place-items: center;
+    background: var(--background-actividades) no-repeat center center fixed ;
+    background-size:cover;
+}
+
+.pregunta-gamificada-alternativas .timmer {
+    display: none;
+}
+
+.pregunta-gamificada-alternativas .lienzo {
+    display: grid;
+    grid-template-areas:
+        "pregunta-gamificada-alternativas-header"
+        "pregunta-gamificada-alternativas-main";
+    grid-template-columns: auto;
+    grid-template-rows: min-content auto;
+}
+
+
+.pregunta-gamificada-alternativas .header {
+    position: relative;
+    z-index: 2;
+    grid-area: pregunta-gamificada-alternativas-header;
+    display: grid;
+    place-items: center;
+}
+
+.pregunta-gamificada-alternativas .main {
+    position: relative;
+    z-index: 1;
+    grid-area: pregunta-gamificada-alternativas-main;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    place-items: center;
+}
+
+
+/* ----------------------------------------------- MAIN / progreso-centro -------------------*/
+.pregunta-gamificada-alternativas .main .centro .box .box-wrap {
+    background-image: linear-gradient(0deg, rgba(0,0,0,0),rgba(0,0,0,0));
+    
+}
+
+.pregunta-gamificada-alternativas .main .centro {
+    width: 90%;
+    height: 100%;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+}
+
+.pregunta-gamificada-alternativas .main .centro .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(calc(var(--medida-s) * 2.2),calc(var(--medida-s) * 4)) auto auto;
+    place-items: center;
+}
+
+.pregunta-timmer {
+    width: 80%;
+    position: relative;
+}
+
+.pregunta-timmer .contador {
+    position: absolute;
+    z-index: 2;
+    left: calc(50% - 20px);
+    
+}
+
+.pregunta-timmer .contador .reloj-de-arena {
+    width: calc(var(--medida-s) * 2.2);
+    height: calc(var(--medida-s) * 2.2);
+    object-position: center;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-40px, -50%);
+    background-image: var(--reloj-arena);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.pregunta-timmer .contador .reloj-de-arena img {
+    width: 100%;
+    height: auto;
+    
+}
+
+.pregunta-timmer .contador .segundos {
+    position: absolute;
+    z-index: 2;
+    width: var(--medida-xl);
+    height: var(--medida-xl);
+    margin-left: var(--espaciado-l);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    transform: translate(-10%, -50%);
+    font-family: "Regular";
+    font-size: var(--font-xxl);
+    text-align: center;
+    /*line-height: 68px;*/
+    border-radius: 100%;
+    border: var(--borde-l) solid var(--primary-color-light);
+    background-image: linear-gradient(-10deg, var(--primary-color-light), var(--primary-color-dark)40%);
+    animation: animacion-pregunta-gamificada-latido 1s infinite linear;
+}
+
+@keyframes animacion-pregunta-gamificada-latido {
+    0% {
+        scale: 110%;
+        border: var(--borde-l) solid var(--primary-color-dark);
+    }
+    100% {
+        border: var(--borde-l) solid var(--primary-color-light);
+        scale: 100%;
+    }
+}
+
+.pregunta-timmer .pregunta-timmer-barra {
+    width: 100%;
+    height: calc(var(--medida-xs) / 2);
+    position: absolute;
+    z-index: 1;
+    top:-10px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    filter: var(--sombra-medium);
+}
+
+.pregunta-timmer .pregunta-timmer-barra .pregunta-timmer-barra-progreso {
+    display: block;
+    width: 0%;
+    height: 100%;
+    border-radius: 20px;
+    border-top: 1px solid var(--primary-color-light);
+    background-image: linear-gradient(180deg, var(--primary-color-light), var(--primary-color-dark)50%);
+
+    filter: var(--sombra-soft);
+
+    /*animation: animacion-pregunta-gamificada-timmer 15s infinite linear;*/
+} 
+
+@keyframes animacion-pregunta-gamificada-timmer {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+.pregunta-alternativas {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    place-items: center;
+}
+
+.pregunta-alternativas .pregunta {
+    margin: var(--espaciado-m) var(--espaciado-xl) var(--espaciado-xl) var(--espaciado-xl);
+    font-family: "Regular";
+    font-size: var(--font-xl);
+    text-align: center;
+    filter: var(--sombra-medium);
+}
+
+.pregunta-alternativas .alternativas {
+    width: 100%;
+    display: grid;
+    /*grid-template-columns: repeat(auto-fit,minmax(min(320px,380px), 1fr));*/
+    grid-template-columns: repeat(auto-fit,minmax(calc(var(--medida-s) * 10), 1fr));
+}
+
+.pregunta-alternativas .alternativas .alternativa {
+    margin: var(--espaciado-xs);
+    padding: var(--espaciado-s);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    place-items: center;
+    font-family: "Regular";
+    font-size: var(--font-l);
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border: 5px solid var(--primary-color);
+    border-radius: 30px;
+    background-image: linear-gradient(-35deg, var(--primary-color-light)0%, var(--primary-color-dark)30%, var(--primary-color-dark)90%, var(--primary-color-light)100%);
+    filter: var(--sombra-medium);
+}
+
+.pregunta-alternativas .alternativas .alternativa:hover {
+    background-image: linear-gradient(-35deg, var(--tertiary-color-light)0%, var(--tertiary-color-dark)30%, var(--tertiary-color-dark)90%, var(--tertiary-color-light)100%);
+}
+
+
+.pregunta-alternativas .alternativas .alternativa::before {
+    content: "";
+    display: block;
+    height: 0.9rem;
+    position: absolute;
+    top: 0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    border-radius: 100%;
+    opacity: 0.35;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0.1) 30%, rgba(255,255,255,1) 100%);
+  }
+
+  .pregunta-alternativas .alternativas .alternativa::after {
+    content: "";
+    display: block;
+    height: 1rem;
+    position: absolute;
+    bottom: 0.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    border-radius: 100%;
+    opacity: 0.35;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0.1) 30%, rgba(255,255,255,1) 100%);
+  }
+
+.pregunta-alternativas .alternativas .alternativa .texto {
+    margin-left: 15px;
+    font-family: "Regular";
+    font-size: var(--font-l);
+    text-align: left;
+    filter: var(--sombra-soft);
+}

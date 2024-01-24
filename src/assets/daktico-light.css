@@ -1,0 +1,60 @@
+.daktico-light {
+    min-width: 75vw;
+}
+
+.daktico-light .titulo {
+    padding-top: var(--medida-l);
+    padding-bottom: var(--espaciado-s);
+    text-align: center;
+    font-family: "Ultra";
+    font-size: var(--font-xxl);
+    letter-spacing: 4px;
+    filter: var(--sombra-hard);
+}
+
+.daktico-light .descripcion {
+    padding-bottom: var(--espaciado-xl);
+    text-align: center;
+    font-family: "Light";
+    font-size: var(--font-s);
+    letter-spacing: 1px;
+    filter: var(--sombra-subtle);
+}
+
+.daktico-light .cursos {
+    width: 100%;
+    padding: var(--espaciado-l);
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(calc(var(--medida-xxl)*4), 1fr)); 
+    grid-template-rows: repeat(auto-fit,minmax(calc(var(--medida-xl)*1.5), 1fr)); 
+    gap: var(--espaciado-l);
+}
+
+.daktico-light .cursos .curso {
+    min-height: calc(var(--medida-xl)*1.5);
+    display: grid;
+    place-items: center;
+    border: var(--borde-xs) solid var(--primary-color);
+    border-radius: var(--borde-xxl);
+    background-image: linear-gradient(var(--rotacion-antihoraria), var(--primary-color-light) 0%, var(--primary-color-dark) 40%, var(--primary-color-dark) 80%, var(--primary-color)100%);
+    filter: var(--sombra-hard);
+}
+
+.daktico-light .cursos .curso:hover {
+    border: var(--borde-xs) solid var(--tertiary-color-dark);
+    background-image: linear-gradient(var(--rotacion-antihoraria), var(--tertiary-color-light) 0%, var(--tertiary-color-dark) 40%, var(--tertiary-color-dark) 80%, var(--tertiary-color)100%);
+    transition: 0.2s;
+}
+
+
+
+.daktico-light .cursos .curso .nombre {
+    min-height: calc(var(--espaciado-l)* 2.5);
+    padding-top: var(--espaciado-m);
+    padding-bottom: var(--espaciado-m);
+    text-align: center;
+    font-family: "Bold";
+    font-size: var(--font-l);
+    letter-spacing: 1px;
+    filter: var(--sombra-medium);
+}

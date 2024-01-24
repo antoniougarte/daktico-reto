@@ -1,0 +1,556 @@
+/* ----------------------------------------------- TEMPLATE -------------------*/
+.portada-curso {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    background: var(--background-portada) no-repeat center center fixed ;
+    background-size:cover;
+}
+
+.portada-curso .lienzo {
+    display: grid;
+    grid-template-areas:
+        "portada-header"
+        "portada-main";
+    grid-template-columns: auto;
+    grid-template-rows: min-content auto;    
+}
+
+.portada-curso .header {
+    padding: 10px 0px;
+    display: grid;
+    grid-area: portada-header;
+    /*grid-template-areas: "portada-usuario portada-estadisticas portada-menu";
+    grid-template-columns: minmax(320px, 380px) auto max(120px);*/
+    grid-template-areas: 
+        "header-usuario header-menu"
+        "header-estadisticas header-estadisticas";
+    grid-template-columns: auto max-content;
+    grid-template-rows: auto;    
+    overflow: hidden;
+}
+
+.portada-curso .main {
+    grid-area: portada-main;
+    display: grid;
+    grid-template: "portada-centro portada-derecha";
+    grid-template-columns: repeat(auto-fill,minmax(max-content, 1fr));  
+    grid-template-rows: auto;
+    place-items: center;
+}
+
+.portada-curso .main .izquierda {
+    grid-area: portada-izquierda;
+    display: none;
+}
+
+.portada-curso .main .centro {
+    grid-area: portada-centro;
+    display: grid;
+}
+.portada-curso .main .derecha {
+    grid-area: portada-derecha;
+    display: grid;
+}
+
+
+
+/* ----------------------------------------------- HEADER / usuario -------------------*/
+
+
+/* ----------------------------------------------- MAIN / portada-izquierda -------------------*/
+
+
+/* ----------------------------------------------- MAIN / portada-centro -------------------*/
+.portada-curso .main .centro {
+    width: 100%;
+    max-width: 1400px;
+    margin: var(--espaciado-m);
+    display: grid;
+    place-items: center;
+}
+
+.portada-curso .main .centro .container {
+    width: 100%;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+/* --------------------------------------------------- aquí el cuerpo del curso */
+.curso {
+    width: 100%;
+    padding: var(--espaciado-l);
+}
+
+
+.curso .cabecera {
+    display: grid;
+    grid-template-columns: max-content auto;
+    grid-template-areas: "valoracion nombre-curso";
+    align-items: center;
+}
+
+.curso .cabecera .nombre-curso {
+    /*min-width: 234px;*/
+    margin-left: var(--espaciado-l);
+    grid-area: nombre-curso;
+    font-family: "Regular";
+    font-size:var(--font-xxl);
+    filter: var(--sombra-medium);
+}
+
+.curso .cabecera .valoracion {
+    grid-area: valoracion;
+    width: 100%;
+    height: auto;
+    position: relative;
+    filter: var(--sombra-soft);
+}
+
+.curso .cabecera .valoracion .valor-1 {
+    width: var(--medida-xxl);
+    height: var(--medida-xxl);
+    background-image: var(--valor-1);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.curso .cabecera .valoracion .valor-2 {
+    width: var(--medida-xxl);
+    height: var(--medida-xxl);
+    background-image: var(--valor-2);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.curso .cabecera .valoracion .valor-3 {
+    width: var(--medida-xxl);
+    height: var(--medida-xxl);
+    background-image: var(--valor-3);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.curso .cabecera .valoracion .valor-4 {
+    width: var(--medida-xxl);
+    height: var(--medida-xxl);
+    background-image: var(--valor-4);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.curso .cabecera .valoracion .valor-5 {
+    width: var(--medida-xxl);
+    height: var(--medida-xxl);
+    background-image: var(--valor-5);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.curso .cabecera .valoracion .comentario {
+    width: calc(var(--medida-xxl) * 4);
+    height: var(--medida-xxl);
+    position: absolute;
+    left: var(--medida-xs);
+    top: calc(0px - calc(var(--medida-xxl) * 1.1));
+}
+
+.curso .cabecera .valoracion .comentario .comentario-texto {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    z-index: 2;
+    padding: 0px 10px;
+    display: grid;
+    place-items: center;
+    font-family: "Regular";
+    font-size: var(--font-s);
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.curso .cabecera .valoracion .comentario .comentario-fondo {
+    position: absolute;
+    z-index: 1;
+    width: 90%;
+    height: 90%;
+    
+}
+
+.curso .cabecera .valoracion .comentario .comentario-fondo #comentario-color-fondo {
+    fill: var(--tertiary-color);
+}
+
+.curso .cabecera .valoracion .comentario .comentario-fondo #comentario-color-borde {
+    fill: var(--tertiary-color-light);
+}
+
+.curso .progreso {
+    position: relative;
+    width: 100%;
+    height: var(--medida-l);
+    margin: var(--espaciado-l) 0px;
+}
+
+.curso .progreso .barra {
+    position: absolute;
+    z-index: 1;
+    margin: 0 auto;
+    height: calc(var(--medida-xxs) / 2);
+    width: 96%;
+    top: var(--espaciado-l);
+    background: var(--tertiary-color-medium);
+    /*background-image: linear-gradient(-135deg, var(--tertiary-color-subtle)0%, var(--tertiary-color-subtle) 100%);*/
+    border: 2px solid var(--dark-color);
+    border-radius: 50px;
+    overflow: hidden;
+    filter: var(--sombra-hard)
+}
+
+.curso .progreso .barra .barra-progreso {
+    display: block;
+    width: var(--progreso-curso);
+    height: 100%;
+    border-radius: 50px;
+    background-image: linear-gradient(
+        -45deg,
+        var(--primary-color-light) 25%, /* color A */
+        var(--primary-color-dark) 25%, /* color B */
+        var(--primary-color-dark) 50%, /* color B */
+        var(--primary-color-light) 50%, /* color A */
+        var(--primary-color-light) 75%, /* color A */
+        var(--primary-color-dark) 75%, /* color B */
+        var(--primary-color-dark) /* color B */
+    );
+    background-size: 50px 50px;
+    filter: var(--sombra-intense);
+    
+} 
+
+
+.curso .progreso .insignia-on {
+    position: absolute;
+    z-index: 2;
+    width: var(--medida-m);
+    height: var(--medida-m);
+    right: 0px;
+    top: 2px;
+    background-image: var(--insignia-on);
+    background-size: cover;
+    background-position: center;
+    filter: var(--sombra-soft);
+}
+
+.curso .progreso .insignia-off {
+    position: absolute;
+    z-index: 2;
+    width: var(--medida-m);
+    height: var(--medida-m);
+    right: 2px;
+    top: 2px;
+    background-image: var(--insignia-off);
+    background-size: cover;
+    background-position: center;
+    filter: var(--sombra-soft);
+}
+
+.curso .resumen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(calc(var(--medida-m)*2), 1fr));
+}
+
+.curso .resumen .dato {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0px var(--espaciado-m);
+    min-height:var(--medida-xl);
+}
+
+.curso .resumen .dato .dato-fondo {
+    background-color: var(--dark-color);
+    opacity: 60%;
+    width: calc(100% - 20px);
+    height: var(--medida-xxs);
+    margin-left: 20px;
+    padding-left: 25px;
+    position: absolute;
+    z-index: 1;
+    border-top-right-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+}
+
+.curso .resumen .dato .dato-fondo::before {
+    content: "";
+    display: block;
+    height: 0.1rem;
+    position: absolute;
+    z-index: 2;
+    top: 0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 1rem);
+    background: var(--primary-color);
+    border-radius: 100%;
+    opacity: 0.7;
+    background-image: linear-gradient(-270deg, var(--primary-color-light) 20%, var(--primary-color) 60%, var(--primary-color-dark) 80%);
+  }
+  
+.curso .resumen .dato .dato-fondo::after {
+    content: "";
+    display: block;
+    height: 0.1rem;
+    position: absolute;
+    z-index: 3;
+    bottom: 0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 1rem);
+    background: var(--primary-color);
+    border-radius: 100%;
+    opacity: 0.7;
+    background-image: linear-gradient(-270deg, var(--primary-color-light) 20%, var(--primary-color) 60%, var(--primary-color-dark) 80%);
+}
+
+.curso .resumen .dato .dato-nombre {
+    position: absolute;
+    z-index: 4;
+    top: 4px;
+    left: var(--medida-s);
+    font-family: "Bold";
+    font-size: var(--font-xxs);
+    margin-bottom: 5px;
+    filter: var(--sombra-hard);
+}
+
+.curso .resumen .dato .dato-valor {
+    position: absolute;
+    z-index: 5;
+    left: var(--medida-m);
+    font-family: "Regular";
+    font-size: var(--font-m);
+    filter: var(--sombra-hard);
+}
+
+.curso .resumen .dato .dato-imagen {
+    position: relative;
+    z-index: 6;
+    width: var(--medida-s);
+    height: var(--medida-s);
+    display: flex;
+    align-items: center;
+
+    
+}
+
+.curso .resumen .dato-completado .dato-imagen {
+    width: var(--medida-s);
+    height: var(--medida-s);
+    background-image: var(--dato-completado);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.curso .resumen .dato-calificacion .dato-imagen {
+    width: var(--medida-s);
+    height: var(--medida-s);
+    background-image: var(--dato-calificacion);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.curso .resumen .dato-puntaje .dato-imagen {
+    width: var(--medida-s);
+    height: var(--medida-s);
+    background-image: var(--dato-puntaje);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.curso .resumen .dato-vidas .dato-imagen {
+    width: var(--medida-s);
+    height: var(--medida-s);
+    background-image: var(--dato-vidas);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.curso .acceso-directo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(calc(var(--medida-l) * 2), 1fr));
+    margin: 0px 0px;
+}
+
+.curso .acceso-directo .acceso {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0px 6px;
+    min-height:var(--medida-m);
+}
+
+.curso .acceso-directo .acceso .acceso-fondo {
+    position: absolute;
+    z-index: 1;
+    width: calc(100% - 20px);
+    height: var(--medida-xxs);
+    left: var(--espaciado-s);
+    background-color: var(--dark-color);
+    background-image: linear-gradient(25deg, var(--primary-color-dark) 30%, var(--primary-color-light) 90%);
+    border-radius: 0 20px 20px 0;
+    filter: var(--sombra-hard);
+    
+}
+
+.curso .acceso-directo .acceso .acceso-icono {
+    position: absolute;
+    z-index: 2;
+    width: var(--medida-xs);
+    height: var(--medida-xs);
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    background-image: radial-gradient(var(--primary-color-light), var(--primary-color-dark));
+    border: var(--borde-xs) solid var(--primary-color-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color:var(--light-color);
+    filter: var(--sombra-medium);
+}
+
+
+.curso .acceso-directo .acceso .acceso-nombre {
+    position: absolute;
+    z-index: 3;
+    left: var(--medida-s);
+    font-family: "Bold";
+    font-size: var(--font-xs);
+    filter: var(--sombra-medium);
+}
+
+
+/* ----------------------------------------------- MAIN / portada-derecha -------------------*/
+.portada-curso .main .accion {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+
+}
+
+.portada-curso .main .accion .start {
+    min-width: calc(var(--medida-xxl) * 4.5);
+    min-height: calc(var(--medida-xxl) * 4.5);
+    position: relative;
+    /*right: 50px;
+    bottom: 50px;*/
+    filter: var(--sombra-intense);
+}
+
+.portada-curso .main .accion .start .btn-start-nombre {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    /*padding: 12px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Regular";
+    font-size: var(--font-xxxl);
+    color: var(--button-color);
+    filter: var(--sombra-intense);
+}
+
+.portada-curso .main .accion .start .btn-start-fondo #principal {
+    fill: var(--primary-color);
+}
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ VISTAS RESPONSIVE */
+
+/* ------------------------------------------------------------------------------------------------------------------------------ XLarge */
+
+@media (min-width:2560px) and (min-height:1278px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> XLarge hotizontal */
+
+}
+
+@media (min-width:1278px) and (min-height:2560px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> XLarge vertical */
+
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ Tablets */
+
+@media (max-width:1366px) and (max-height:1024px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Tablets horizontal */
+
+}
+
+@media (max-width:1024px) and (max-height:1366px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Tablets vertical */
+    .portada-curso .main {
+        grid-template:
+            "portada-centro"
+            "portada-derecha";
+        grid-template-rows: auto;
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ Escritorio */
+
+@media (max-width:1536px) and (max-height:767px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Escritorio 125% */
+
+}
+
+@media (max-width:1280px) and (max-height:639px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Escritorio 150% */
+
+}
+
+@media (max-width:1098px) and (max-height:548px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Escritorio 175% */
+
+}
+
+@media (max-width:960px) and (max-height:479px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Escritorio ventanas */
+
+}
+
+@media (max-width:768px) and (max-height:384px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Escritorio mini ventanas */
+
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ Móviles vertical */
+
+@media (max-width:479px) and (max-height:960px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Móviles vertical */
+    .portada-curso .main {
+        grid-template:
+            "portada-centro"
+            "portada-derecha";
+        grid-template-rows: auto;
+    }
+    
+}
+
+@media (max-width:384px) and (max-height:768px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Mini móviles vertical */
+
+}

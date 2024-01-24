@@ -1,0 +1,165 @@
+/* ----------------------------------------------- TEMPLATE -------------------*/
+.separador {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    background: var(--background-actividades) no-repeat center center fixed ;
+    background-size:cover;
+}
+
+.separador .lienzo {
+    display: grid;
+    grid-template-areas:
+        "separador-header"
+        "separador-main"
+        "separador-footer";
+    grid-template-rows: min-content auto min-content;
+    grid-template-columns: auto;
+}
+
+
+.separador .header {
+    position: relative;
+    z-index: 2;
+    grid-area: separador-header;
+    display: grid;
+    place-items: center;
+}
+
+.separador .main {
+    position: relative;
+    z-index: 1;
+    grid-area: separador-main;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    place-items: center;
+}
+
+.separador .footer {
+    position: relative;
+    z-index: 3;
+    grid-area: separador-footer;
+    display: grid;
+    place-items: center;
+}
+
+.separador .footer .container {
+    display: grid;
+    place-items: center;
+    margin: var(--espaciado-m) var(--espaciado-m) var(--espaciado-l) var(--espaciado-m);
+}  
+
+
+/* ----------------------------------------------- MAIN / progreso-centro -------------------*/
+.separador .main .centro {
+    max-width: 1400px;
+    margin: var(--separador-m);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+}
+
+.separador .main .centro .container {
+    width: 80%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    place-items: center;
+}
+
+.separador .main .centro .box .box-container .box-wrap {
+    background-color: transparent;
+    background-image: none;
+}
+
+.modulo {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    place-items: center;
+}
+
+.modulo .modulo-contenido {
+    position: relative;
+}
+
+.modulo .modulo-contenido .modulo-titulo {
+    min-width: 100%;
+    min-height: calc(var(--medida-xl) * 2);
+    position: relative;
+    z-index: 1 ;
+    display: grid;
+    grid-template:
+        "modulo-grafico modulo-nombre";
+    grid-template-columns: calc(var(--medida-xxl) *2) auto;
+    grid-template-rows: auto;
+    place-items: center;
+}
+
+.modulo .modulo-contenido .modulo-titulo::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width:  100%;
+    height: 65%;
+    border: var(--borde-l) solid var(--tertiary-color);
+    border-radius: 100px;
+    background-image: linear-gradient(0deg, var(--tertiary-color-dark), var(--tertiary-color-light));
+}
+
+.modulo .modulo-contenido .modulo-titulo .modulo-grafico {
+    grid-area: modulo-grafico;
+}
+
+
+.modulo .modulo-contenido .modulo-titulo .modulo-grafico img {
+    width: calc(var(--medida-s) * 3);
+    height: auto;
+}
+
+.modulo .modulo-contenido .modulo-titulo .modulo-nombre {
+    grid-area: modulo-nombre;
+    width: 100%;
+    margin: 0px var(--espaciado-l);
+    font-family: "Regular";
+    font-size: var(--font-xxxl);
+    text-align: left;
+}
+
+.modulo .modulo-contenido .modulo-descripcion {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    transform: translateY(calc(0px - var(--medida-xxs)))
+}
+
+.modulo .modulo-contenido .modulo-descripcion .descripcion-texto {
+    width: 90%;
+    height: 100%;
+    padding: var(--espaciado-l);
+    padding-top: var(--espaciado-xl);
+    position: relative;
+    display: grid;
+    place-items: center;
+    font-family: "Regular";
+    font-size: var(--font-m);
+    text-align: left;
+}
+
+.modulo .modulo-contenido .modulo-descripcion .descripcion-texto::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width:  100%;
+    height: 100%;
+    border: var(--borde-s) solid var(--secundary-color);
+    border-radius: 25px;
+    background-image: linear-gradient(0deg, var(--secundary-color-dark), var(--secundary-color-light));
+}

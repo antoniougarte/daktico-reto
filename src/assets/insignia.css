@@ -1,0 +1,169 @@
+/* ----------------------------------------------- TEMPLATE -------------------*/
+.insignia {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    background: var(--background-certificado) no-repeat center center fixed ;
+    background-size:cover;
+}
+
+.insignia .lienzo {
+    display: grid;
+    grid-template-areas:
+        "insignia-header"
+        "insignia-main"
+        "insignia-footer";
+    grid-template-rows: min-content auto min-content;
+    grid-template-columns: auto;
+}
+
+
+.insignia .header {
+    position: relative;
+    z-index: 2;
+    grid-area: insignia-header;
+    display: grid;
+    place-items: center;
+}
+
+.insignia .main {
+    position: relative;
+    z-index: 1;
+    grid-area: insignia-main;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    place-items: center;
+}
+
+
+.insignia .footer {
+    position: relative;
+    z-index: 3;
+    grid-area: insignia-footer;
+    display: grid;
+    place-items: center;
+}
+
+.insignia .footer .container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    place-items: center;
+    margin: var(--espaciado-m) var(--espaciado-s) var(--espaciado-m) var(--espaciado-s);
+} 
+
+
+
+.insignia .escena .tercer-plano {
+    object-position: center;
+    display: grid;
+    place-items: center;
+    min-width: 1920px;
+    min-height: 1920px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.insignia .escena .tercer-plano .rayas {
+    fill:var(--secundary-color-subtle);
+    transform-origin: 50% 50%; /* Centro del elemento */
+    animation: animacion-loop-rotacion360 20s infinite linear;
+}
+
+
+
+
+/* ----------------------------------------------- HEADER -------------------*/
+
+/* ----------------------------------------------- MAIN / progreso-centro -------------------*/
+.insignia .main .centro {
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    margin: var(--espaciado-s);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    place-items: center;
+}
+
+.insignia .main .centro .container {
+    width: 100%;
+    height: 100%;
+    padding: var(--medida-xxs);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    place-items: center;
+}
+
+.insignia .insignia-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: calc(var(--medida-xxl) * 10);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+}
+
+.insignia .insignia-wrap .insignia-back {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-image: var(--insignia-back);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.insignia .insignia-wrap .insignia-container {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 70%;
+    place-content: center;
+}
+
+
+.insignia .insignia-wrap .felicitacion {
+    width: 100%;
+    height: 100%;
+    margin-bottom: var(--espaciado-xl);
+    text-align: center;
+}
+
+.insignia .insignia-wrap .felicitacion .texto {
+    font-family: "Light";
+    font-size: var(--font-m);
+    color: var(--subtle-color);
+    filter: var(--sombra-soft);
+}
+
+.insignia .insignia-wrap .felicitacion .titulo {
+    font-family: "Bold";
+    font-size: var(--font-xl);
+    filter: var(--sombra-medium);
+}
+
+.insignia .insignia-wrap .insignia-pin {
+    width: 100%;
+    height: 100%;
+    background-image: var(--insignia-pin);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* ----------------------------------------------- FOOTER -------------------*/

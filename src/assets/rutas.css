@@ -1,0 +1,512 @@
+/* ----------------------------------------------- TEMPLATE -------------------*/
+.rutas {
+    width: 100%;
+    min-width: 280px;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background: var(--background-portada) no-repeat center center fixed ;
+    background-size:cover;
+}
+
+.rutas .lienzo {
+    min-width: 280px;
+    display: grid;
+    grid-template-areas:
+        "portada-header"
+        "portada-main";
+    grid-template-columns: 100%;
+    grid-template-rows: min-content auto;    
+}
+
+.rutas .header {
+    padding: 10px 0px;
+    display: grid;
+    grid-area: portada-header;
+    /*grid-template-areas: "portada-usuario portada-estadisticas portada-menu";
+    grid-template-columns: minmax(320px, 380px) auto max(120px);*/
+    grid-template-areas: 
+        "header-usuario header-menu"
+        "header-estadisticas header-estadisticas";
+    grid-template-columns: auto max-content;
+    grid-template-rows: auto;    
+    overflow: hidden;
+}
+
+.rutas .main {
+    grid-area: portada-main;
+    display: grid;
+    /*grid-template: "portada-centro portada-derecha";
+    grid-template-columns: repeat(auto-fill,minmax(max-content, 1fr));  */
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    place-items: center;
+}
+
+
+
+/* ----------------------------------------------- CONTAINER PRINCIPAL -------------------*/
+
+.rutas .box-simple {
+    width: 90%;
+}
+
+.rutas .container {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* ----------------------------------------------- MENU RUTAS -------------------*/
+
+.rutas .container .menu-rutas {
+    display: grid;
+    grid-template-columns: var(--medida-s) auto var(--medida-s);
+    grid-template-rows: auto;
+    gap: var(--espaciado-m);
+    align-items: center;
+}
+
+/* Estilos para botones deshabilitados */
+.rutas .rutas-showLeft:disabled, .rutas-showRight:disabled {
+    opacity: 0.5;
+    cursor: auto;
+}
+
+
+.rutas .container .menu-rutas .listado-rutas {
+    width: 100%;
+    display: flex;
+    gap: var(--espaciado-m);
+    overflow: hidden;
+    scroll-behavior: smooth; /* Añade suavizado al desplazamiento */
+}
+
+.rutas .container .menu-rutas .listado-rutas .ruta-item {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    padding: var(--espaciado-m) var(--espaciado-l); /* arriba y abajo, laterales */
+    font-family: "Regular";
+    font-size: var(--font-l);
+    color: var(--light-color);
+    white-space: nowrap;
+    text-shadow: var(--sombra-text-medium);
+    border-radius: var(--borde-xxxl) var(--borde-xxxl) 0 0; /* Superior derecha, superior izquierda, inferior derecha, inferior izquierda */
+    cursor: pointer;
+}
+
+.rutas .container .menu-rutas .listado-rutas .ruta-item:hover {
+    background-image: linear-gradient(180deg, var(--primary-color-light) 0%, var(--primary-color-dark)100%);
+}
+
+
+.rutas .container .menu-rutas .listado-rutas .activo {
+    background-image: linear-gradient(180deg, var(--primary-color-light) 0%, var(--primary-color-dark)100%);
+    opacity: 1;
+}
+
+.rutas .container .menu-rutas .listado-rutas .inactivo {
+    background-image: linear-gradient(180deg, var(--tertiary-color-light) 0%, var(--tertiary-color-dark)100%);
+    opacity: 0.6;
+}
+
+.rutas .container .menu-rutas .listado-rutas .ruta-item .cursos-pendientes {
+    display: inline-block; /* Permite especificar ancho y alto */
+    width: var(--medida-xxxs);
+    height: var(--medida-xxxs);
+    margin-left: var(--espaciado-xs);
+    padding: var(--espaciado-xs);
+    font-family: "Light";
+    font-size: var(--font-xxs);
+    color: var(--light-color);
+    text-align: center;
+    line-height: calc(var(--espaciado-m)*1.5);
+    border-radius: 50%;
+    background-image: linear-gradient(180deg, var(--secundary-color-light) 0%, var(--secundary-color-dark)100%);
+}
+
+
+
+
+
+
+/* ----------------------------------------------- RUTA -------------------*/
+
+.rutas .ruta{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: var(--espaciado-m);
+    border-radius: var(--borde-l); /* Superior derecha, superior izquierda, inferior derecha, inferior izquierda */
+    background-image: linear-gradient(0deg, var(--primary-color-light) 0%, var(--primary-color-dark)100%);
+}
+
+.rutas .ruta .container {
+    position: relative;
+    width: 100%;
+    height: calc(var(--medida-xs) * 12);
+    border: 1px solid var(--light-color);
+    background: url("../img/ruta-default.png");
+    background-repeat: repeat-x;
+    background-position: left center;
+    background-size:cover;
+    overflow-x: scrolL;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--tertiary-color-light) rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+    height: calc(var(--medida-xxxs) / 2.25);
+}
+
+.rutas .ruta .container::-webkit-scrollbar-thumb {
+    background: var(--tertiary-color-light);
+    background-image: linear-gradient(180deg, var(--light-color-40) 0%, var(--tertiary-color-light) 30%, var(--tertiary-color)40%, var(--tertiary-color-dark)70%, var(--dark-color-40)100%);
+}
+
+
+.rutas .ruta .container::-webkit-scrollbar-thumb:hover {
+    background: var(--tertiary-color-dark);
+}
+
+
+.rutas .ruta .container .componentes {
+    position: absolute;
+    z-index: 1;
+    width: initial;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+}
+
+/* -------------------------------- cursos -------------------*/
+.rutas .ruta .container .cursos {
+    width: 100%;
+    margin-left: calc(var(--medida-xs) * 4);
+    display: inline-flex;
+}
+
+.rutas .ruta .container .cursos .curso {
+    min-width: calc(var(--medida-xs) * 4);
+    max-width: calc(var(--medida-xs) * 4);
+    padding: var(--espaciado-xxl) 0px 0px 0px;
+    margin-bottom: var(--espaciado-m);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto calc(var(--medida-xs)*3);
+    justify-items: center;
+    align-items: center;
+}
+
+.rutas .ruta .container .cursos .curso .nombre {
+    font-family: "Regular";
+    font-size: var(--font-m);
+    text-align: center;
+    text-shadow: var(--sombra-text-intense);
+}
+
+.rutas .ruta .container .curso .podio {
+    width: calc(var(--medida-xs)*2);
+    height: calc(var(--medida-xs)*3);
+    background: url("../img/podio.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.rutas .ruta .container .cursos .curso .insignia {
+    position: absolute;
+    z-index: 1;
+    width: calc(var(--medida-xxs)*2);
+    height: calc(var(--medida-xxs)*2);
+    top: calc(50% - calc(var(--medida-xs) * 3.4
+    ));
+    display:block;
+    background: url("../img/insignia-nombre.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center;
+}
+
+
+/* -------------------------------- puntajes -------------------*/
+.rutas .ruta .container .puntajes {
+    width: 100%;
+    margin-left: calc(var(--medida-xs) * 4);
+    display: inline-flex;
+}
+
+.rutas .ruta .container .puntajes .puntaje {
+    min-width: calc(var(--medida-xs) * 4);
+    max-width: calc(var(--medida-xs) * 4);
+    margin-bottom: var(--espaciado-xxxl);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.rutas .ruta .container .puntajes .puntaje .punto {
+    width: var(--medida-xxs);
+    height: var(--medida-xxs);
+    display:block;
+    background: var(--punto);
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center;
+}
+
+.rutas .ruta .container .puntajes .puntaje .puntos {
+    margin-left: var(--medida-xs) * 4;
+    font-family: "Bold";
+    font-size: var(--font-m);
+    text-align: center;
+    text-shadow: var(--sombra-text-intense);
+}
+
+
+/* -------------------------------- trayectoria -------------------*/
+.rutas .ruta .container .trayectoria {
+    position: absolute;
+    z-index: 2;
+    height: calc(var(--medida-xs) * 4);
+    top: calc(50% - calc(var(--medida-xs) * 2));
+    display: inline-flex;
+    align-items: center;
+}
+
+/* -------------------------------- trayecto -------------------*/
+.rutas .ruta .container .trayectoria .trayecto {
+    width: 100%;
+    height:calc(var(--medida-xs) * 2); 
+    display: inline-flex;
+    align-items: center;
+    background: url("../img/pista.png");
+    background-repeat: repeat-x;
+    background-size:cover;
+    background-position: center;
+    filter: var(--sombra-long);
+}
+
+/* -------------------------------- progreso -------------------*/
+.rutas .ruta .container .trayectoria .trayecto .progreso {
+    position: absolute;
+    z-index: 1;
+    width: auto;
+    height: var(--medida-xs);
+    display: inline-flex;
+    justify-content: center;
+}
+
+.rutas .ruta .container .trayectoria .trayecto .progreso .barra {
+    position: absolute;
+    z-index: 1;
+    width: calc(calc(var(--medida-xs) * 8) * 3); /* factor de multiplicación para determinar la posición */
+    height: var(--medida-xs);
+    background-image: linear-gradient(90deg, var(--primary-color-dark) 60%, var(--primary-color)100%);
+}
+
+.rutas .ruta .container .trayectoria .trayecto .progreso .punta {
+    position: absolute;
+    z-index: 2;
+    width: var(--medida-xs);
+    height: var(--medida-xs); 
+    left: calc(calc(calc(var(--medida-xs) * 4) * 3) - var(--medida-xs)); /* factor de multiplicación para determinar la posición (3)*/
+    background-image: linear-gradient(90deg, var(--light-color-0) 0%, var(--light-color)90%);
+}
+
+
+
+/* -------------------------------- hitos -------------------*/
+.rutas .ruta .container .trayectoria .trayecto .hitos {
+    width: 100%;
+    margin-left: calc(var(--medida-xs) * 4);
+    display: inline-flex;
+    justify-content: center;
+}
+
+.rutas .ruta .container .trayectoria .trayecto .hitos .hito {
+    min-width: calc(var(--medida-xs) * 4);
+    max-width: calc(var(--medida-xs) * 4);
+    height: var(--medida-xs);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-color);
+}
+.rutas .ruta .container .trayectoria .trayecto .hitos .avance {
+    position: absolute;
+    z-index: 1;
+    width: var(--medida-s);
+    height: var(--medida-s);
+    display: flex;
+    align-items: center;
+}
+
+.rutas .ruta .container .trayectoria .trayecto .hitos .avance .background {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border: var(--borde-xxs) solid var(--dark-color);
+    border-radius: var(--borde-xxl);
+    background-color: var(--dark-color);
+    transform: rotate(45deg); /* Rotar para forma de rombo */
+}
+
+.rutas .ruta .container .trayectoria .trayecto .hitos .avance .texto {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Bold";
+    font-size: var(--font-m);
+    text-align: center;
+}
+
+.rutas .ruta .container .trayectoria .trayecto .hitos .estado {
+    position: absolute;
+    z-index: 2;
+    width: var(--medida-s);
+    height: var(--medida-s);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rutas .ruta .container .trayectoria .trayecto .hitos .estado .background {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border: var(--borde-xxs) solid rgb(239,184,16);
+    border-radius: var(--borde-xxl);
+    /*background-color: var(--primary-color);*/
+    background: rgb(239,184,16);
+    background: -moz-linear-gradient(195deg, rgb(245,214,115,1) 0%, rgba(250,234,184,1) 21%, rgba(239,184,16,1) 58%, rgba(245,214,115,1) 100%);
+    background: -webkit-linear-gradient(195deg, rgba(245,214,115,1) 0%, rgba(250,234,184,1) 21%, rgba(239,184,16,1) 58%, rgba(245,214,115,1) 100%);
+    background: linear-gradient(195deg, rgba(245,214,115,1) 0%, rgba(250,234,184,1) 21%, rgba(239,184,16,1) 58%, rgba(245,214,115,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#efb810",endColorstr="#f5d673",GradientType=1);
+    transform: rotate(45deg); /* Rotar para forma de rombo */
+}
+
+.rutas .ruta .container .trayectoria .trayecto .hitos .estado .icon {
+    position: absolute;
+    z-index: 2;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--check);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    filter: var(--sombra-small);
+}
+
+
+
+/* -------------------------------- menumento -------------------*/
+.rutas .ruta .container .trayectoria .menumento {
+    position: absolute;
+    z-index: 1;
+    width: calc(var(--medida-xs) * 4);
+    height: calc(var(--medida-xs) * 4);
+    right: calc(0px - calc(var(--medida-xs) * 4));
+    top: calc(50% - calc(calc(var(--medida-xs) * 4) / 2));
+    background: url("../img/menumento.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: right;
+}
+
+/* -------------------------------- inicio -------------------*/
+.rutas .ruta .container .inicio {
+    position: absolute;
+    z-index: 2;
+    width: calc(var(--medida-xs) * 2);
+    height: calc(var(--medida-xs) * 4);
+    top: calc(50% - calc(calc(var(--medida-xs) * 4) / 2));
+    background: url("../img/trayecto-start.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: left;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ VISTAS RESPONSIVE */
+
+/* ------------------------------------------------------------------------------------------------------------------------------ XLarge */
+
+@media (min-width:2560px) and (min-height:1278px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> XLarge hotizontal */
+
+}
+
+@media (min-width:1278px) and (min-height:2560px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> XLarge vertical */
+
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ Tablets */
+
+@media (max-width:1366px) and (max-height:1024px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Tablets horizontal */
+    
+}
+
+@media (max-width:1024px) and (max-height:1366px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Tablets vertical */
+    
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ Escritorio */
+
+@media (max-width:1536px) and (max-height:767px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Escritorio 125% */
+
+}
+
+@media (max-width:1280px) and (max-height:639px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Escritorio 150% */
+
+}
+
+@media (max-width:1098px) and (max-height:548px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Escritorio 175% */
+
+}
+
+@media (max-width:960px) and (max-height:479px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Escritorio ventanas */
+
+}
+
+@media (max-width:768px) and (max-height:384px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Escritorio mini ventanas */
+
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------ Móviles vertical */
+
+@media (max-width:479px) and (max-height:960px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Móviles vertical */
+    .rutas .box-simple {
+        height: 80%;
+    }
+
+    .rutas .ruta .container {
+        width: 100%;
+        height: 100%;
+        border: 1px solid var(--light-color);
+        background: url("../img/ruta-default-vertical.png");
+        background-repeat: repeat-x;
+        background-position: center top;
+        background-size:cover;
+    }
+    
+}
+
+@media (max-width:384px) and (max-height:768px) { /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Mini móviles vertical */
+
+}
